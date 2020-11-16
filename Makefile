@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: klever <klever@student.42.fr>              +#+  +:+       +#+         #
+#    By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 14:12:39 by klever            #+#    #+#              #
-#    Updated: 2020/11/16 02:19:21 by klever           ###   ########.fr        #
+#    Updated: 2020/11/16 20:59:48 by kbarahon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Cambiar el nombre........****
 NAME	= 	cub3D
 
-SRC		= 	check.c exit.c cub3d.c 
+SRC		= 	check.c exit.c cub3d.c utils.c
 
 GNL		=	gnl/get_next_line.c gnl/get_next_line_utils.c
 
@@ -39,22 +39,16 @@ endif
 
 # for Mac compilation
 LIB		= 	-framework OpenGL -framework AppKit
-MLXDIR	=	minilibx
+
 MLX		= 	-L$(MLXDIR) -lmlx
+
 DYLIB	=	libmlx.dylib
 
+MLXDIR	=	minilibx
 
-
-# for Linux compilation
-# LIB		= 	-Lmlx_linux -lmlx -lXext -lX11 -lm -lz -AppKit
-# MLX		= 	-L$(MLXDIR) -lmlx
-# DYLIB	=	libmlx.a
-# MLXDIR	= 	mlx_linux
-
-# COLORS
 BLUE	= 	\033[38;5;27m
 CYAN	= 	\033[38;5;51m
-PINK	=	 \033[38;5;211m
+PINK	=	\033[38;5;211m
 GREEN	= 	\033[38;5;72m
 TURQ	= 	\033[38;5;37m
 WHITE	= 	\033[38;5;15m
@@ -111,9 +105,16 @@ re:
 subzero:
 	@echo "$(C)$(O)$(L) ______     __  __     ______     ______     _____    ";
 	@echo "$(C)$(O)$(L)/\  ___\   /\ \/\ \   /\  == \   /\___  \   /\  __ \  ";
-	$(SHIFT)
 	@echo "$(C)$(O)$(L)\ \ \____  \ \ \_\ \  \ \  __<   \/_\___ \  \ \ \_\ \ ";
 	@echo "$(C)$(O)$(L) \ \_____\  \ \_____\  \ \_____\  /\______\  \ \____/ ";
 	$(SHIFT)
 	@echo "$(C)$(O)$(L)  \/_____/   \/_____/   \/_____/  \/______/   \/____/ ";
 	@echo "$(C)$(O)$(L)                                                      ";
+	@echo "$(C)$(O)$(L) ___ ___    _____       _     _   _ ";
+	@echo "$(C)$(O)$(L)| | |_  |  |     |___ _| |___|_|_| |";
+	$(SHIFT)
+	@echo "$(C)$(O)$(L)|_  |  _|  | | | | .'| . |  _| | . |";
+	@echo "$(C)$(O)$(L)  |_|___|  |_|_|_|__,|___|_| |_|___| kbarahon";
+	@echo "$(C)$(O)$(L) 								   ";
+	@echo "\x1B[01;36m \x1B[0m"
+                                    
