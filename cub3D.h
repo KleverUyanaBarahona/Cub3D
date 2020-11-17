@@ -6,7 +6,7 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/11/16 20:58:38 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/11/17 19:46:29 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,10 +176,14 @@ typedef struct		s_game
 	t_view			view;
 	t_player		player;
 }					t_game;
+
 //check.c
+int		file_checker(int case_n, void *param);
 int		arg_checker(t_game *game, int argc, char **argv);
+
 //exit.c
 void	err_handler(t_game *game, char *str);
+
 //utils.c
 int		ft_strcmp(const char *s1, const char *s2);
 
