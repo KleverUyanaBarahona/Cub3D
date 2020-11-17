@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+         #
+#    By: klever <klever@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 14:12:39 by klever            #+#    #+#              #
-#    Updated: 2020/11/16 20:59:48 by kbarahon         ###   ########.fr        #
+#    Updated: 2020/11/17 00:59:59 by klever           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf libmlx.dylib
 	@rm -rf screenshot.bmp
+	@rm -rf minilibx/*info
 
 re:
 	@echo "\n\t   $(BLUE)$(LBOR)Aww here we go again$(RBOR)$(WHITE)\n"
