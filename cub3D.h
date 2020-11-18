@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/11/17 19:46:29 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/11/18 21:24:09 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,7 @@ int		file_checker(int case_n, void *param);
 int		arg_checker(t_game *game, int argc, char **argv);
 
 //exit.c
+int		exiter(t_game *game, int c);
 void	err_handler(t_game *game, char *str);
 
 //utils.c
