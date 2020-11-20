@@ -6,7 +6,7 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 16:57:57 by klever            #+#    #+#             */
-/*   Updated: 2020/11/18 21:21:44 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/11/20 21:06:54 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 int		exiter(t_game *game, int c)
 {
 	if (c != -1 && game->map.data)
-		map_cleaner(game->map.data);
+		//map_cleaner(game->map.data);
 	if (game->map.perpdist)
 		free(game->map.perpdist);
 	if (game->config.tex[0].ptr)
-		tex_cleaner(game, game->config.tex);
+		//tex_cleaner(game, game->config.tex);
 	if (game->mlx && game->config.sprite.ptr)
 		mlx_destroy_image(game->mlx, game->config.sprite.ptr);
 	if (game->mlx && game->map.sprites)
-		sprite_evicter(&game->map.sprites);
+		//sprite_evicter(&game->map.sprites);
 	if (game->mlx && game->mlx_win)
 	{
 		if (game->fr1.ptr)
@@ -49,5 +49,5 @@ void	err_handler(t_game *game, char *str)
 		if (write(2, str, ft_strlen(str)) < 0)
 			err_handler(game, "Write failed\n");
 	}
-	exiter(game, -1);
+	//exiter(game, -1);
 }
