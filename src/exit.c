@@ -6,11 +6,29 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 16:57:57 by klever            #+#    #+#             */
-/*   Updated: 2020/11/20 21:06:54 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:13:22 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+
+
+//free data game->map->data (char **data)
+
+void	map_cleaner(char **map)
+{
+	int i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	if (map)
+		free(map);
+}
 
 /*
 ** exits on 0 if called normally, -1 if called in error processing
@@ -19,7 +37,7 @@
 int		exiter(t_game *game, int c)
 {
 	if (c != -1 && game->map.data)
-		//map_cleaner(game->map.data);
+		map_cleaner(game->map.data);
 	if (game->map.perpdist)
 		free(game->map.perpdist);
 	if (game->config.tex[0].ptr)
