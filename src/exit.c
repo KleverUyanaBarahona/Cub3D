@@ -6,13 +6,25 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 16:57:57 by klever            #+#    #+#             */
-/*   Updated: 2020/11/25 21:13:22 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:55:42 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
 
+void	tex_cleaner(t_game *game, t_img *tex)
+{
+	int i;
+
+	i = 0;
+	while (tex[i].ptr != NULL && i < 6)
+	{
+		if (tex[i].ptr)
+			mlx_destroy_image(game->mlx, tex[i].ptr);
+		i++;
+	}
+}
 
 //free data game->map->data (char **data)
 
