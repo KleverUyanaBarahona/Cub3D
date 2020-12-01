@@ -6,12 +6,33 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 16:57:57 by klever            #+#    #+#             */
-/*   Updated: 2020/11/30 20:55:42 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/01 21:15:31 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
+void	sprite_evicter(t_sprite **list)
+{
+	t_sprite	*tmp;
+
+	if (!list)
+		return ;
+	tmp = *list;
+	while (tmp)
+	{
+		if ((*list)->next)
+			*list = tmp->next;
+		if (*list == tmp)
+			*list = NULL;
+		if (tmp)
+			free(tmp);
+		tmp = *list;
+	}
+	*list = NULL;
+}
+
+//destroid 6 imgs->ptr and mlx
 
 void	tex_cleaner(t_game *game, t_img *tex)
 {
@@ -53,11 +74,11 @@ int		exiter(t_game *game, int c)
 	if (game->map.perpdist)
 		free(game->map.perpdist);
 	if (game->config.tex[0].ptr)
-		//tex_cleaner(game, game->config.tex);
+		tex_cleaner(game, game->config.tex);
 	if (game->mlx && game->config.sprite.ptr)
 		mlx_destroy_image(game->mlx, game->config.sprite.ptr);
 	if (game->mlx && game->map.sprites)
-		//sprite_evicter(&game->map.sprites);
+		sprite_evicter(&game->map.sprites);
 	if (game->mlx && game->mlx_win)
 	{
 		if (game->fr1.ptr)
@@ -79,5 +100,5 @@ void	err_handler(t_game *game, char *str)
 		if (write(2, str, ft_strlen(str)) < 0)
 			err_handler(game, "Write failed\n");
 	}
-	//exiter(game, -1);
+	exiter(game, -1);
 }

@@ -6,7 +6,7 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/11/30 20:56:20 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/01 21:15:02 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,7 @@ int		exiter(t_game *game, int c);
 void	err_handler(t_game *game, char *str);
 void	map_cleaner(char **map);
 void	tex_cleaner(t_game *game, t_img *tex);
+void	sprite_evicter(t_sprite **list);
 
 //utils.c
 int		ft_strcmp(const char *s1, const char *s2);
