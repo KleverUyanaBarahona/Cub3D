@@ -6,7 +6,7 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/01 21:15:02 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:52:50 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,9 @@ typedef struct		s_game
 	t_player		player;
 }					t_game;
 
+//cub3d
+void				init_mlx(t_game *game);
+
 //check.c
 int		file_checker(int case_n, void *param);
 int		arg_checker(t_game *game, int argc, char **argv);
@@ -190,5 +193,8 @@ void	sprite_evicter(t_sprite **list);
 
 //utils.c
 int		ft_strcmp(const char *s1, const char *s2);
+
+//init.c
+int		init_game(t_game *game, int save);
 
 #endif

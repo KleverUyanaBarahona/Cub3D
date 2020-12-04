@@ -6,7 +6,7 @@
 /*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 16:46:17 by mjiam             #+#    #+#             */
-/*   Updated: 2020/11/18 21:15:02 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/04 19:20:40 by kbarahon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		file_checker(int case_n, void *param)
 	int fd;
 
 	len = case_n < 3 ? ft_strlen((char *)param) : 0;
-	printf("%d",!ft_strcmp(&((char *)param)[len - 4], ".cub"));
 	if (case_n == 1)
 	{
 		if (!ft_strcmp(&((char *)param)[len - 4], ".cub"))
@@ -61,7 +60,7 @@ int		arg_checker(t_game *game, int argc, char **argv)
 		err_handler(game, "Invalid map file\n");
 		if (argc == 3)
 		{
-			if (!ft_strcmp(argv[2], "--save"))
+			if (ft_strcmp(argv[2], "--save") == 0)
 			return (1);
 			err_handler(game, "Invalid second argument\n");
 		}

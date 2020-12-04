@@ -6,14 +6,14 @@
 #    By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 14:12:39 by klever            #+#    #+#              #
-#    Updated: 2020/11/20 21:19:40 by kbarahon         ###   ########.fr        #
+#    Updated: 2020/12/04 19:42:21 by kbarahon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Cambiar el nombre........****
 NAME	= 	cub3D
 
-SRC		= 	check.c exit.c cub3d.c utils.c
+SRC		= 	check.c exit.c cub3d.c utils.c init.c
 
 GNL		=	gnl/get_next_line.c gnl/get_next_line_utils.c
 
