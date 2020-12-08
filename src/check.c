@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 16:46:17 by mjiam             #+#    #+#             */
-/*   Updated: 2020/12/04 19:20:40 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/08 03:43:02 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** case 1 for .cub file check, case 2 for .xpm/.png check,
 ** case 3 for open file check
 */
-  
+
 int		file_checker(int case_n, void *param)
 {
 	int len;

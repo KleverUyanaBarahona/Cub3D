@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+         #
+#    By: klever <klever@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 14:12:39 by klever            #+#    #+#              #
-#    Updated: 2020/12/04 19:42:21 by kbarahon         ###   ########.fr        #
+#    Updated: 2020/12/08 06:08:28 by klever           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Cambiar el nombre........****
 NAME	= 	cub3D
 
-SRC		= 	check.c exit.c cub3d.c utils.c init.c
+SRC		= 	check.c exit.c cub3d.c utils.c utils2.c init.c
 
 GNL		=	gnl/get_next_line.c gnl/get_next_line_utils.c
 

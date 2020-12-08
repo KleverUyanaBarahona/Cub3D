@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbarahon <kbarahon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/04 19:52:50 by kbarahon         ###   ########.fr       */
+/*   Updated: 2020/12/08 06:09:16 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,9 +192,14 @@ void	tex_cleaner(t_game *game, t_img *tex);
 void	sprite_evicter(t_sprite **list);
 
 //utils.c
+void	pos_setter(t_pos *pos, double x, double y);
+
+//utils2.c
 int		ft_strcmp(const char *s1, const char *s2);
 
 //init.c
 int		init_game(t_game *game, int save);
+void	init_img(t_img *img);
+void	init_key(t_key *keys);
 
 #endif
