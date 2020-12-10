@@ -6,11 +6,46 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 19:37:13 by kbarahon          #+#    #+#             */
-/*   Updated: 2020/12/08 05:53:38 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:54:28 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+void	init_view(t_view *view)
+{
+	view->side = 0;
+	view->camera_x = 0;
+	view->fsdist = 0;
+	view->wallhit = 0;
+	view->line.height = 0;
+	view->line.start = 0;
+	view->line.end = 0;
+	pos_setter(&view->deltadist, 0, 0);
+	pos_setter(&view->dir, 0, 0);
+	pos_setter(&view->plane, 0, 0);
+	pos_setter(&view->raydir, 0, 0);
+	pos_setter(&view->raypos, 0, 0);
+	pos_setter(&view->sidedist, 0, 0);
+	pos_setter(&view->step, 0, 0);
+}
+
+void	init_config(t_config *config)
+{
+	config->i = 0;
+	config->map_found = 0;
+	init_img(&config->tex[N]);
+	init_img(&config->tex[S]);
+	init_img(&config->tex[E]);
+	init_img(&config->tex[W]);
+	init_img(&config->tex[F]);
+	init_img(&config->tex[C]);
+	init_img(&config->sprite);
+	config->floor.colour = 2147483648;
+	config->ceiling.colour = 2147483648;
+	config->screenwidth = 0;
+	config->screenheight = 0;
+}
 
 void	init_key(t_key *keys)
 {
@@ -56,8 +91,8 @@ int		init_game(t_game *game, int save)
 	init_img(&game->fr1);
 	init_img(&game->fr2);
 	init_key(&game->keys);
-	//init_config(&game->config);
-	//init_map(&game->map);
-	//init_view(&game->view);
+	init_config(&game->config);
+	init_map(&game->map);
+	init_view(&game->view);
 	return (0);
 }

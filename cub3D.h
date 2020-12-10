@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/08 06:09:16 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/10 13:59:50 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,5 +201,13 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		init_game(t_game *game, int save);
 void	init_img(t_img *img);
 void	init_key(t_key *keys);
+void	init_config(t_config *config);
+void	init_view(t_view *view);
+
+//map.c
+void	init_map(t_map *map);
+
+//parser.c
+int		parser(t_game *game, char *map);
 
 #endif

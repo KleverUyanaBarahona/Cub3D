@@ -6,7 +6,7 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 13:36:30 by klever            #+#    #+#             */
-/*   Updated: 2020/12/08 03:42:58 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/10 14:04:48 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int		main(int argc, char **argv)
 	save = 1;
 	if (init_game(&game, save) < 0)
 		err_handler(&game, "Initialisation failed\n");
+    if (parser(&game, argv[1]) < 0)
+		err_handler(&game, "File parsing failed\n");
 
 
 /*
