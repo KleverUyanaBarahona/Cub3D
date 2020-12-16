@@ -6,14 +6,15 @@
 #    By: klever <klever@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 14:12:39 by klever            #+#    #+#              #
-#    Updated: 2020/12/10 14:00:09 by klever           ###   ########.fr        #
+#    Updated: 2020/12/15 02:19:44 by klever           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Cambiar el nombre........****
 NAME	= 	cub3D
 
-SRC		= 	check.c exit.c cub3d.c utils.c utils2.c init.c map.c parser.c
+SRC		= 	check.c exit.c cub3d.c utils.c utils2.c init.c map.c parser.c \
+			config.c
 
 GNL		=	gnl/get_next_line.c gnl/get_next_line_utils.c
 

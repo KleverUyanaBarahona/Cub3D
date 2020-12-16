@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/10 13:59:50 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/16 01:50:27 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,9 +193,13 @@ void	sprite_evicter(t_sprite **list);
 
 //utils.c
 void	pos_setter(t_pos *pos, double x, double y);
+int		whitespaceskip(char *line, int *i);
+int		isnumber(char *line, int i);
+int		value_finder(char *line, int *i, char exc);
 
 //utils2.c
 int		ft_strcmp(const char *s1, const char *s2);
+intmax_t	ft_atoi(char *line, int *i);
 
 //init.c
 int		init_game(t_game *game, int save);
@@ -209,5 +213,9 @@ void	init_map(t_map *map);
 
 //parser.c
 int		parser(t_game *game, char *map);
+int		data_filler(t_game *game, char *line);
+
+//config.c
+int		res_setter(t_game *game, char *line, int *i);
 
 #endif
