@@ -6,11 +6,86 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 02:17:42 by klever            #+#    #+#             */
-/*   Updated: 2020/12/16 14:31:07 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/17 03:11:22 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+void	tex_filer(t_game *game, char *path, t_img *tex)
+{
+	int		format;
+	int		len;
+
+	format = -1;
+	format = file_checker(2, path);
+	if (format == -1)
+		err_handler(game, "Invalid texture file\n");
+	if (file_checker(3, path) < 0)
+		err_handler(game, "Failed to open texture file\n");
+	if (format == xpm)
+		tex->ptr = mlx_xpm_file_to_image(game->mlx, path,
+					&tex->width, &tex->height);
+	else if (format == png)
+		tex->ptr = mlx_png_file_to_image(game->mlx, path,
+					&tex->width, &tex->height);
+	if (tex->ptr == NULL)
+		err_handler(game, "Image reading fail\n");
+	len = ft_strlen(path);
+	if (!ft_strcmp(&path[len - 12], "sprite_3.xpm") ||
+		!ft_strcmp(&path[len - 12], "sprite_3.png"))
+		game->map.star = 1;
+		printf("\n%s\n",path);
+	tex->addr = mlx_get_data_addr(tex->ptr, &tex->bpp,
+					&tex->linesize, &tex->endian);
+	if (tex->addr == NULL)
+		err_handler(game, "Image address retrieval fail\n");
+}
+
+char	*pathfinder(char *line, int *i, int len)
+{
+	char	*path;
+	int		j;
+
+	j = 0;
+	path = malloc(sizeof(char) * (len + 1));
+	if (!path)
+		return (0);
+	while (line[*i] && j < len)
+	{
+		path[j] = line[*i];
+		j++;
+		(*i)++;
+	}
+	path[j] = '\0';
+	return (path);
+}
+
+int		tex_setter(t_game *game, t_img *tex, char *line, int *i)
+{
+	char	*path;
+	int		len;
+
+	len = 0;
+	path = NULL;
+	if (tex->ptr)
+		err_handler(game, "Duplicate information (tex) in map file\n");
+	if (inset(line, *i))
+	{
+		while (!whitespaceskip(line, i))
+			(*i)++;
+	}
+	whitespaceskip(line, i);
+	while (line[*i + len] && line[*i + len] != '\n')
+		len++;
+	path = pathfinder(line, i, len); 
+	if (!path)
+		err_handler(game, "Malloc fail\n");
+	tex_filer(game, path, tex);
+	free(path);
+	game->config.i++;
+	return (0);
+}
 
 int		res_setter(t_game *game, char *line, int *i)
 {

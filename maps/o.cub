@@ -1,2 +1,7 @@
+R   1600 800
+NO textures/wall_3.xpm
+SO textures/wall_3.xpm
+WE textures/wood.png
+EA textures/wood.png
 
-R 1212123123 12
+S  textures/sprite_3.xpm

@@ -6,11 +6,19 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 20:55:51 by kbarahon          #+#    #+#             */
-/*   Updated: 2020/12/15 20:18:55 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/16 18:56:51 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+int		inset(char *line, int i)
+{
+	if (line[i] == 'N' || line[i] == 'S' || line[i] == 'E' || line[i] == 'W'
+		|| line[i] == 'F' || line[i] == 'C')
+		return (1);
+	return (0);
+}
 
 int		value_finder(char *line, int *i, char exc)
 {

@@ -6,7 +6,7 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/16 01:50:27 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/17 02:15:23 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,7 @@ void	pos_setter(t_pos *pos, double x, double y);
 int		whitespaceskip(char *line, int *i);
 int		isnumber(char *line, int i);
 int		value_finder(char *line, int *i, char exc);
+int		inset(char *line, int i);
 
 //utils2.c
 int		ft_strcmp(const char *s1, const char *s2);
@@ -217,5 +218,8 @@ int		data_filler(t_game *game, char *line);
 
 //config.c
 int		res_setter(t_game *game, char *line, int *i);
+int		tex_setter(t_game *game, t_img *tex, char *line, int *i);
+char	*pathfinder(char *line, int *i, int len);
+void	tex_filer(t_game *game, char *path, t_img *tex);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 13:58:08 by klever            #+#    #+#             */
-/*   Updated: 2020/12/16 14:32:41 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/17 03:04:01 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int		data_filler(t_game *game, char *line)
 	if (line[i] == 'R' && (line[i + 1] == ' ' || isnumber(line, i + 1) ||
 		line[i + 1] == '-'))
 		return (res_setter(game, line, &i));
-//	else if (line[i] == 'N' && line[i + 1] == 'O')
-//		return (tex_setter(game, &game->config.tex[N], line, &i));
-//	else if (line[i] == 'S' && line[i + 1] == 'O')
-//		return (tex_setter(game, &game->config.tex[S], line, &i));
-//	else if (line[i] == 'W' && line[i + 1] == 'E')
-//		return (tex_setter(game, &game->config.tex[W], line, &i));
-//	else if (line[i] == 'E' && line[i + 1] == 'A')
-//		return (tex_setter(game, &game->config.tex[E], line, &i));
-//	else if (line[i] == 'S' && line[i + 1] != '0')
-//		return (tex_setter(game, &game->config.sprite, line, &i));
+	else if (line[i] == 'N' && line[i + 1] == 'O')
+		return (tex_setter(game, &game->config.tex[N], line, &i));
+	else if (line[i] == 'S' && line[i + 1] == 'O')
+		return (tex_setter(game, &game->config.tex[S], line, &i));
+	else if (line[i] == 'W' && line[i + 1] == 'E')
+		return (tex_setter(game, &game->config.tex[W], line, &i));
+	else if (line[i] == 'E' && line[i + 1] == 'A')
+		return (tex_setter(game, &game->config.tex[E], line, &i));
+	else if (line[i] == 'S' && line[i + 1] != '0')
+		return (tex_setter(game, &game->config.sprite, line, &i));
 //	else if (line[i] == 'F' || line[i] == 'C')
 //		return (fc_filler(game, line, &i));
 //	else if (line[i] == '0' || line[i] == '1' || line[i] == '2')
