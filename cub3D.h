@@ -6,7 +6,7 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/17 02:15:23 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/18 02:11:35 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,6 +215,7 @@ void	init_map(t_map *map);
 //parser.c
 int		parser(t_game *game, char *map);
 int		data_filler(t_game *game, char *line);
+int		fc_filler(t_game *game, char *line, int *i);
 
 //config.c
 int		res_setter(t_game *game, char *line, int *i);
