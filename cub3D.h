@@ -6,7 +6,7 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:29:13 by klever            #+#    #+#             */
-/*   Updated: 2020/12/18 02:11:35 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/27 21:16:26 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,7 @@ void				init_mlx(t_game *game);
 //check.c
 int		file_checker(int case_n, void *param);
 int		arg_checker(t_game *game, int argc, char **argv);
+void	config_checker(t_game *game);
 
 //exit.c
 int		exiter(t_game *game, int c);
@@ -211,6 +212,7 @@ void	init_view(t_view *view);
 
 //map.c
 void	init_map(t_map *map);
+int		map_maker(t_game *game, char *line, int *i);
 
 //parser.c
 int		parser(t_game *game, char *map);
@@ -222,5 +224,6 @@ int		res_setter(t_game *game, char *line, int *i);
 int		tex_setter(t_game *game, t_img *tex, char *line, int *i);
 char	*pathfinder(char *line, int *i, int len);
 void	tex_filer(t_game *game, char *path, t_img *tex);
+int		colour_setter(t_game *game, t_colour *element, char *line, int *i);
 
 #endif

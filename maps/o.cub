@@ -5,3 +5,8 @@ WE textures/wood.png
 EA textures/wood.png
 
 S  textures/sprite_3.xpm
+
+F 255,255,255
+C textures/blue_left.png
+
+10

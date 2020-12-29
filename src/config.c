@@ -6,11 +6,42 @@
 /*   By: klever <klever@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 02:17:42 by klever            #+#    #+#             */
-/*   Updated: 2020/12/17 03:11:22 by klever           ###   ########.fr       */
+/*   Updated: 2020/12/27 21:25:04 by klever           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+int		colour_setter(t_game *game, t_colour *element, char *line, int *i)
+{
+	int rgb[3];
+	int	c;
+
+	c = 0;
+	if (element->colour != 2147483648)
+		err_handler(game, "Duplicate information (f/c) in map file\n");
+	if (value_finder(line, i, line[*i]) < 0)
+		return (-1);
+	while (line[*i] && c < 3)
+	{
+		rgb[c] = ft_atoi(line, i);
+		printf("\n%d",rgb[c]);
+		if (rgb[c] < 0 || rgb[c] > 255)
+			err_handler(game, "Invalid floor/ceiling values\n");
+		if (value_finder(line, i, ',') < 0)
+			return (-1);
+		c++;
+	}
+	if (c < 3)
+		err_handler(game, "Missing floor/ceiling value\n");
+	element->colour = (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
+	printf("\n%d",rgb[0]<< 16);
+	printf("\n%d",rgb[1]<< 8);
+	printf("\n%d",rgb[2]);
+	printf("\n%d",element->colour );
+	game->config.i++;
+	return (0);
+}
 
 void	tex_filer(t_game *game, char *path, t_img *tex)
 {
